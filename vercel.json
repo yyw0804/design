@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "YW 브랜드 랜딩 페이지/api/chat.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "YW 브랜드 랜딩 페이지/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "YW 브랜드 랜딩 페이지/chatbot.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "YW 브랜드 랜딩 페이지/uploads/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/chat",
+      "dest": "/YW 브랜드 랜딩 페이지/api/chat.js"
+    },
+    {
+      "src": "/chatbot.js",
+      "dest": "/YW 브랜드 랜딩 페이지/chatbot.js"
+    },
+    {
+      "src": "/uploads/(.*)",
+      "dest": "/YW 브랜드 랜딩 페이지/uploads/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/YW 브랜드 랜딩 페이지/index.html"
+    }
+  ]
+}
